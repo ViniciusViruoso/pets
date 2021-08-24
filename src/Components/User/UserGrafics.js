@@ -5,20 +5,27 @@ import { VictoryPie, VictoryChart, VictoryBar } from "victory";
 
 const UserGrafics = ({ data }) => {
   const [grafic, setGrafic] = React.useState([]);
-  const [total, setTotal] = React.useState(0);
+  const [total, setTotal] = React.useState();
+  
 
   React.useEffect(() => {
-    if(data === 0) {
-      const graficData = data.map((post) => {
-        return {
-          x: post.title,
-          y: Number(post.acessos),
-        };
-      });
-      setGrafic(graficData);
-      setTotal(
-        data.map(({ acessos }) => Number(acessos)).reduce((a, b) => a + b)
-      );
+    if(data !== []) {
+      if(data.length > 0) {
+        const graficData = data.map((post) => {
+          return {
+            x: post.title,
+            y: Number(post.acessos),
+          };
+        });
+        setGrafic(graficData);
+        setTotal(
+          data.map(({ acessos }) => Number(acessos)).reduce((a, b) => a + b)
+        );
+      } else {
+        setTotal('Não há acessos.')
+      }
+      
+      
     } else setTotal('Não há acessos.')
     
   }, [data]);
