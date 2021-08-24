@@ -33,7 +33,7 @@ const UserGrafics = ({ data }) => {
   return (
     <section className={`${styles.grafic} animeTop`}>
       <div className={`${styles.total} ${styles.graficItem}`}>
-        <p className={styles.text}>Acessos: <span>{total}</span></p>
+        <p className={styles.text}>Total de Acessos: <span>{total}</span></p>
       </div>
       <div className={styles.graficItem}>
         <VictoryPie
@@ -57,16 +57,15 @@ const UserGrafics = ({ data }) => {
         />
       </div>
       <div className={styles.graficItem}>
-          <VictoryChart>
+          <VictoryChart domainPadding={10}>
             <VictoryBar data={grafic} alignment="start" style={{
             data: { 
               fill: "#fff",
               width: 15 ,
-              opacity:1
             },
           }} 
           animate={{
-            onExit: {
+            onEnter: {
               duration: 500,
               before: () => ({
                 fill: "#ffffff02",

@@ -149,6 +149,21 @@ a {
   flex: 1;
 }
 
+img.imgMobile  {
+  width: 100%;
+  height: 220%;
+  display: block;
+}
+
+@media screen and (max-width: 40rem) {
+  img.imgMobile {
+    width: 100%;
+    height: 220%;
+    display: block;
+    object-fit: cover;
+  }
+}
+
 @media screen and (max-width: 440px) {
   .title {
     font-size: 2rem;
