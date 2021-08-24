@@ -82,8 +82,7 @@
 
 @media (max-width: 83rem) {
   .photo {
-    height: auto;
-    max-height: calc(100vh - 4rem);
+    height: 100vh;
     overflow-y: auto;
     grid-template-columns: minmax(15rem,40rem);
     justify-content: center;
