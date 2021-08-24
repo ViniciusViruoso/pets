@@ -1,0 +1,48 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
+import useForm from '../../Hooks/useForm'
+import { UserContext } from '../../UserContext'
+import Button from '../Forms/Button'
+import Input from '../Forms/Input'
+import Error from '../Helper/Error'
+import styles from './LoginForm.module.css'
+import stylesBtn from '../Forms/Button.module.css'
+
+const LoginForm = () => {
+  const username = useForm()
+  const password = useForm()
+
+  const {userLogin,error,loading} = React.useContext(UserContext)
+
+  async function handleLogin(e) {
+    e.preventDefault()
+    if(username.validate() && password.validate()) {
+      userLogin(username.value, password.value)
+    }
+  }
+
+  return (
+    <section className="animeTop">
+      <h1 className="title">Login</h1>
+      <form className={styles.form} onSubmit={handleLogin}>
+        <Input label="Nome de usuário *" type="text" name="username" {...username}/>
+        <Input label="Senha *" type="password" name="password" { ...password}/>
+
+        {loading ? 
+          <Button disabled>Carregando...</Button> 
+          :  
+          <Button>Entrar</Button>
+        }
+        <Error error={error && 'Dados incorretos.'}/>
+      </form>
+      <Link className={styles.perdeu} to='/perdeu'>Perdeu a senha?</Link>
+      <div className={styles.cadastrar}>
+        <h2 className={styles.subtitle}>Cadastre-se</h2>
+        <p>Não possui conta? Cadastre-se no site.</p>
+        <Link className={stylesBtn.button} to='/criar'>Cadastrar</Link>
+      </div>
+    </section>
+  )
+}
+
+export default LoginForm

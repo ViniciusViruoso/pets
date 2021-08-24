@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Spectral:wght@700&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  padding-top: 4rem;
+  margin: 0;
+  color: #eee;
+  --type-first: Helvetica, Arial, sans-serif;
+  --type-second: "Spectral", georgia;
+  font-family: var(--type-first);
+  background: #282a2d;
+  overflow-y: scroll;
+}
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+button,
+input {
+  display: block;
+  font-size: 1rem;
+  font-family: var(--type-first);
+  color: #fff;
+}
+a,
+button {
+  letter-spacing: 0.1rem;
+}
+
+
+a {
+  text-decoration: none;
+  color: #eee;
+  display: inline-block;
+  text-align: center;
+}
+.textarea::placeholder {
+  color: #d6b7f7;
+}
+::-webkit-scrollbar{
+  width: 6px;
+  height: 6px;
+  }
+ ::-webkit-scrollbar-thumb{
+  background: #9439f577;
+  border-radius: 4px;
+  }
+::-webkit-scrollbar-track{
+  background: transparent;
+  border-radius: 0px;
+  box-shadow: inset 0px 0px 0px 0px #F0F0F0;
+  }
+
+.container {
+  max-width: 75rem;
+  padding: 1rem;
+  margin: 0 auto;
+}
+.mainContainer {
+  margin-top: 1rem;
+}
+.title {
+  font-family: var(--type-second);
+  line-height: 1;
+  font-size: 3rem;
+  margin: 2rem 0;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  color: #ffffff;
+}
+
+.title::after {
+  content: "";
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: rgb(148, 57, 245);
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  border-radius: 0.2rem;
+  z-index: -1;
+  animation: animeTitle 1s infinite;
+}
+@keyframes animeTitle {
+  0% {
+    top: 50%;
+  }
+  50% {
+    top: 0%;
+  }
+  100% {
+    top: 50%;
+  }
+}
+
+.animeTop {
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: animeTop 0.4s ease-in forwards;
+}
+
+@keyframes animeTop {
+  to {
+    opacity: initial;
+    transform: translateY(0px);
+  }
+}
+.textPara {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #cca9f5;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+.textPara > strong {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #ece0fa;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+.positive {
+  color: rgb(43, 126, 13);
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 4rem);
+}
+.appBody {
+  flex: 1;
+}
+
+@media screen and (max-width: 440px) {
+  .title {
+    font-size: 2rem;
+  }
+}

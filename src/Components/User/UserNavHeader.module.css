@@ -1,0 +1,139 @@
+.nav {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 1rem;
+}
+.nav a,
+.nav button {
+  background: #eee;
+  border-radius: .2rem;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  transition: .3s;
+  cursor: pointer;
+}
+.nav a:hover,
+.nav a:focus {
+  border-color:  #333;
+  background: white;
+  box-shadow: 0 0 0 3px #eee;
+  outline: none;
+  transition: 0.3s;
+}
+.nav button,
+.nav button svg > * {
+  color: white;
+  background: #333;
+  fill: white;
+}
+.nav button:hover,
+.nav button:focus{
+  border-color: #eee;
+  box-shadow: 0 0 0 3px #eee;
+  outline: none;
+  transition: 0.3s;
+}
+.nav a.active {
+  background: white;
+  box-shadow: 0 0 0 3px #d6b7f7;
+  border-color: #9339F5;
+  transition: 0.3s;
+}
+.nav a.active svg > * {
+  fill:#9339F5
+}
+.mobileBtn {
+  background: #eee;
+  border-radius: .2rem;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+  padding: 0px;
+  transition: 0.3s;
+  position: relative;
+}
+.mobileBtn::after {
+  content: '';
+  display: block;
+  width: .5rem;
+  height: 2px;
+  background: #282a2d;
+  border-radius: 2px;
+  box-shadow: 0px 8px 0px #282a2d,0px -8px 0px #282a2d;
+  transition: 0.3s ;
+}
+.mobileBtn:hover,
+.mobileBtn:focus,
+.mobileBtnActive {
+  background: white;
+  box-shadow: 0 0 0 3px #d6b7f7;
+  border-color: #9339F5;
+  outline: none;
+  color: #9339F5;
+  transition: 0.3s;
+}
+.mobileBtnActive::after {
+  transform: rotate(-90deg);
+  width: 4px;
+  height: 4px;
+  box-shadow: 0px 8px 0px currentColor,0px -8px 0px currentColor;
+  transition: 0.3s;
+}
+.navMobile {
+  display: block;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  padding: 0 1rem;
+  background: #1B1D20;
+  box-shadow: 0 0px 2px rgba(147, 57, 245,0.5),inset 0 0px 5px rgba(147, 57, 245,0.5);
+  border-radius: 4px;
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: .3s;
+  pointer-events: none;
+}
+.navMobileActive {
+  transition: .3s;
+  transform: initial;
+  opacity: 1;
+  z-index: 100;
+  pointer-events: initial;
+}
+
+.navMobile a,
+.navMobile button {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border: 0;
+  background: none;
+  width: 100%;
+  color: #eee;
+  cursor: pointer;
+}
+.navMobile a {
+  border-bottom: 1px solid #eee;
+}
+.navMobile svg ,
+.navMobile svg,
+.navMobile a svg * ,
+.navMobile button svg *{
+  fill: #eee;
+  margin-right: 1rem;
+}
+.navMobile a:focus,
+.navMobile button:hover,
+.navMobile a:focus  svg > *,
+.navMobile button:hover svg > * {
+  fill: #9339F5;
+  color: #9339F5;
+}

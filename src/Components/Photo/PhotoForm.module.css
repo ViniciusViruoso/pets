@@ -1,0 +1,64 @@
+.commentForm {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: stretch;
+  padding: 0 2rem;
+  margin:1rem 0;
+}
+.textarea {
+  width: 100%;
+  border-radius: .2rem;
+  resize: none;
+  outline: none;
+  background: #1B1D20;
+  border: 2px solid #0E1013;
+  padding: .5rem;
+  font-size: 1rem;
+  color: #fff;
+  transition: .2s;
+  font-family: var(--type-first);
+}
+.textarea:hover,
+.textarea:focus {
+  outline: none;
+  border-color: #9339F5;
+  box-shadow: 0 0 0 3px #d6b7f7;
+}
+.btn {
+  background: transparent;
+  border: none;
+  padding:1rem;
+  font-size: 1rem;
+  overflow: hidden;
+}
+button svg *{
+  fill: #d6b7f7;
+  transition: .1s;
+}
+button:hover,
+button:focus,
+button:focus svg path,
+button:hover svg path {
+  cursor: pointer;
+  fill: #d6b7f7;
+  stroke: #9339F5;
+}
+
+button:focus svg g,
+button:hover svg g {
+  animation: latir .6s infinite;
+}
+
+  @keyframes latir {
+    from{
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @media (max-width: 83rem) {
+    .commentForm{
+      padding: 0.1rem;
+    }
+  }
