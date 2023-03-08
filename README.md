@@ -1,15 +1,10 @@
 <br/>
 <div align="center">
 
-  <img src="./preview/logo.png" width="400" alt="Pets">
+  <img src="./preview/logo.png" width="130" alt="Pets">
 
 <br/></div>
 <br/>
-<div align="center">
-
-  <img src="./preview/logo.png" width="400" alt="Pets">
-
-<br/></div>
 
 
 ## Descrição do projeto
