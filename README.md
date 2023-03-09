@@ -9,7 +9,7 @@
 
 ## Descrição do projeto
 
-Essa é uma plataformar de rede social para animais que foi construida durante o curso React da Origamid. Onde api feita com wordpress. 
+Essa é uma plataforma de rede social para animais que foi construida durante o curso React da Origamid. Onde api feita com wordpress. 
 
 ## Oque implementei a mais do projeto inicial:
 - [x] Versão mobile com menu
